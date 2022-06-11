@@ -342,7 +342,7 @@ class Watermark {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: ['style', `data-${this.#attributeTagName}-${this.#tag}`]
+        attributeFilter: ['style', 'class', `data-${this.#attributeTagName}-${this.#tag}`]
       })
     }
   }
