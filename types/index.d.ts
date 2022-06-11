@@ -28,7 +28,7 @@ type WatermarkOptions = {
    */
   text?: string | string[];
   /**
-   * 水印字体颜色
+   * 水印字体
    */
   font?: string;
   /**
@@ -56,7 +56,7 @@ type WatermarkOptions = {
    */
   alpha?: number;
   /**
-   * 水印间距
+   * 水印间距 "16px [16px]"
    */
   padding?: string;
   /**

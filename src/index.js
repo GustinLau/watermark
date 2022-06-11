@@ -1,14 +1,14 @@
 /**
  * @typedef {Object} WatermarkOptions
  * @property {string | string[]} [text]  水印的内容
- * @property {string} [font] 水印字体颜色
+ * @property {string} [font] 水印字体
  * @property {string} [fontSize] 水印字体大小
  * @property {number|string} [fontWeight] 水印字体粗细
  * @property {'left'|'center'|'right'} [textAlign] 水印字体对齐方式
  * @property {string} [color] 水印字体颜色
  * @property {string} [lineHeight] 水印字体行高
  * @property {number} [alpha] 水印透明度
- * @property {string} [padding] 水印间距
+ * @property {string} [padding] 水印间距 "16px [16px]"
  * @property {number} [angle] 水印倾斜度数
  * @property {number} [zIndex] 层级大小
  * @property {string|null} [container] 水印插件挂载的父元素elementId,不输入则默认挂在body上
@@ -79,7 +79,7 @@ class Watermark {
     fontWeight: 'normal',                                                 // 水印字体粗细
     lineHeight: '1.4',                                                    // 水印字体行高
     textAlign: 'center',                                                  // 水印字体对齐方式
-    alpha: 0.12,                                                          // 水印透明度，要求设置在大于等于0.005
+    alpha: 0.12,                                                          // 水印透明度
     angle: -22,                                                           // 水印倾斜度数
     padding: '16px',                                                      // 水印间距
     zIndex: 99999,                                                        // 层级大小
