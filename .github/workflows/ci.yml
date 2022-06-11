@@ -54,4 +54,4 @@ jobs:
       - name: Run deploy shell
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN_4_GITHUB }}
-        run: npm run deploy
+        run: bash deploy.sh
