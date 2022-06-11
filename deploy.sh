@@ -14,7 +14,7 @@ cd dist
 
 if [ -n "$GITHUB_TOKEN" ]; then
   msg='来自github actions的自动部署'
-  githubUrl=https://GustinLau:${GITHUB_TOKEN}@github.com:GustinLau/watermark.git
+  githubUrl=https://GustinLau:${GITHUB_TOKEN}@github.com/GustinLau/watermark.git
   git config --global user.name "GustinLau"
   git config --global user.email "gustinlau@gmail.com"
 fi
