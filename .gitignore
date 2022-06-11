@@ -1,0 +1,9 @@
+.idea/
+.vs/
+.vscode/
+.history/
+dist/
+node_modules/
+
+*.iml
+package-lock.json
