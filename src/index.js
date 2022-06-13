@@ -290,7 +290,6 @@ class Watermark {
     }
 
     const {ratio, width, height, url} = await this.#createWatermarkImage()
-    console.log({ratio, width, height, url})
     const watermarkDom = document.createElement('div')
     watermarkDom.setAttribute(`data-${this.#attributeTagName}-${this.#tag}`, '')
     watermarkDom.style.overflow = 'hidden'
