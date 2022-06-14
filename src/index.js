@@ -22,7 +22,7 @@ class Watermark {
    * 水印标记属性名
    * @type {string}
    */
-  #attributeTagName = 'wm-tag'
+  #attributeTagName = 'wm'
   /**
    * 当前配置
    * @type {WatermarkOptions}
@@ -280,8 +280,8 @@ class Watermark {
     let shadowRoot
     const watermarkContainerDom = document.createElement('div')
     watermarkContainerDom.setAttribute(`data-${this.#attributeTagName}-${this.#tag}-container`, '')
+    // watermarkContainerDom.style.pointerEvents = 'none'
     // 创建shadow dom
-    watermarkContainerDom.style.pointerEvents = 'none'
     // 判断浏览器是否支持attachShadow方法
     if (typeof watermarkContainerDom.attachShadow === 'function') {
       shadowRoot = watermarkContainerDom.attachShadow({mode: 'open'})
@@ -326,7 +326,8 @@ class Watermark {
         for (let i = 0; i < mutations.length; i++) {
           const mutation = mutations[i]
           if (this.#needRerender(mutation)) {
-            this.#render()
+            // IE奇奇怪怪，要延迟执行才正常，那就全部延迟一下吧
+            requestAnimationFrame(() => this.#render())
             break
           }
         }
