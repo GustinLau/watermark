@@ -6,13 +6,15 @@ declare class Watermark {
   constructor(options?: WatermarkOptions);
   /**
    * 加载水印
+   * @returns {Promise<void>}
    */
-  load(): void;
+  load(): Promise<void>;
   /**
    * 更新水印
    * @param {WatermarkOptions} options
+   * @returns {Promise<void>}
    */
-  update(options: WatermarkOptions): void;
+  update(options: WatermarkOptions): Promise<void>;
   /**
    * 移除水印
    */

@@ -192,6 +192,8 @@ class Watermark {
         url = await new Promise(resolve => canvas.toBlob(blob => resolve(URL.createObjectURL(blob))))
       } else if (typeof canvas.msToBlob === 'function') {
         url = URL.createObjectURL(canvas.msToBlob())
+      } else {
+        url = canvas.toDataURL()
       }
       this.#cache = {ratio, width: canvas.width, height: canvas.height, url}
       resolve(this.#cache)
@@ -307,7 +309,7 @@ class Watermark {
     if (this.#watermarkParentDom === document.body) {
       watermarkDom.style.position = 'fixed'
     } else {
-      if (!this.#watermarkParentDom.style.position || this.#watermarkParentDom.style.position==='static') {
+      if (!this.#watermarkParentDom.style.position || this.#watermarkParentDom.style.position === 'static') {
         this.#watermarkParentDom.style.position = 'relative'
       }
       watermarkDom.style.position = 'absolute'
@@ -375,14 +377,16 @@ class Watermark {
 
   /**
    * 加载水印
+   * @returns {Promise<void>}
    */
   load() {
-    this.#render()
+    return this.#render()
   }
 
   /**
    * 更新水印
    * @param {WatermarkOptions} options
+   * @returns {Promise<void>}
    */
   update(options) {
     options = {
@@ -391,7 +395,7 @@ class Watermark {
     }
     this.#options = options
     this.remove()
-    this.load()
+    return this.load()
   }
 
   /**
